@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"crossorigin="anonymous">
+
+</head>
+<body>
+
+	<div class="container my-2">
+		<h1>User List Data</h1>
+		<a th:href="@{/addNewUser}" class="btn btn-primary btn-sm mb-3">Adding
+			New User </a>
+		<table border="1" class="table table-striped table-responsive-md">
+			<thead>
+				<tr>
+
+					<td>Name</td>
+					<td>Email</td>
+					<td>Phone Number</td>
+					<td>Address</td>
+					<td>Status</td>
+					<td>Action</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="user : ${listUsers}">
+					<td th:text="${user.name}"></td>
+					<td th:text="${user.email}"></td>
+					<td th:text="${user.phno}"></td>
+					<td th:text="${user.address}"></td>
+					<td th:text="${user.status}"></td>
+					<td><a th:
+						href="@{/updateFormUser/{userId}(userId=${user.userId})}"
+						class="btn btn-primary">Update User or Edit User</a></td>
+					<td><a th:
+						href="@{/deleteFormUser/{userId}(userId=${user.userId})}"
+						class="btn btn-danger">Delete/Remove</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
