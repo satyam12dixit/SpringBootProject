@@ -1,0 +1,172 @@
+Ans1)-Wrapper class means it will used to convert primitive data type to Class Type  (int( wrapper class-INTEGER),long(wrapper-class LONG),flot(wrapper class-FLOAT) double( w.c-DOUBLE))
+it is avoid typecasting(Widing) of data Type.
+
+Ans2). StringBuffer is Syncronized and mutable.if you want to perform any operation on same objects
+      then it will perform.if i have required fluent change in Application then we should Use StringBuffer concepts.
+
+         public class StringBufferDemo{
+       
+          public static void main(String[] args){
+           
+          StringBuffer sb=new StringBuffer();
+          System.out.println(sb.capacity());//16
+             sb.append("abcdefg");
+          System.out.println(sb);
+
+
+   --->String Builder is not a Thread-Safe multuple Thread Operate at a time in single Objects its means Performance wise  Very Good
+       Present Inside StringBuilder All Method is Non-Syncronized Method.
+           
+Ans3)-->List-> if You want to Represent a group of Individuals Objects in Single Entity where Duplicate is allowed and Insertion Order Must be Preserved Then we Should
+                      go for List Interface.
+          --->Duplication Allowed.
+          --->Homogenous Allowed and Hetrogenous Element Allowed.
+          --->Insertion Order Must Be Preserved.
+                        
+                     List l=new ArrayList();
+                       l.add("aaa");
+                       l.add("BBB");
+                       l.add("aaa");
+                System.out.println(l);//aaa,BBB,aaa
+
+  Set-->If we Want to represent a Group Of Individual Objets in Single Entity Where Insertion Order Must not be Preserved and Duplicat Values are Not Allowed then we
+         should go for Set Interface.
+     -->Duplicate Not Allowed.
+     -->Insertion Order Must Not be Preserved.
+     -->We Can Add Hetrogenous  and Homogenous Element.
+
+            Set s= new HashSet();
+               s.add("satyam");
+               s.add("Anil");//Insertion Oreder Must Not Preserved
+               s.add("10");//Ant type element
+               s.add("satyam");//duplicate not allowed error
+               System.out.println(s);
+
+Ans4)-.   The Exception which are checked by Compiler wheather programmer handling or not,for smooth execuation of the programme at
+              runtime,are Called Checked Exception.
+Example-->
+              sqlException
+               IoException
+              FileNotFoundExcepion
+
+
+           Unchecked Exception--->
+           The exception which are not checked by compile time wheather Programmer Handle Or not that exception are called checked Exception.
+
+Example-->
+          AirthmaticException,
+          ArrayIndexOutOfException
+          NullPointerException.
+              
+Ans5)  Statement-> we have used statement when Sql Query Excuted Only Once Then we sholud go for Statement.
+               -->Statement is very slow in performance Wise
+
+      Prepare Statement-> suppose we want to execute Query in Multiple time then we Should go for Prepare Statement.
+     Prepare Statement Is very Good In Performance Wise.
+
+
+Ans6)--We have to Use Generic concepts for provide TypeSafty and Avoiding- type Casting Problem Every Time in Collection.Then we Should Go for Generic Concepts
+   
+       List<Integer> l= new ArrayList<>();
+   //here we can add only integer type values
+               l.add(10);
+                l.add(20);
+               l.add(10);
+          System.out.println(l);// Here We Have Provide Type Safty by using Genric Concepts.
+
+Ans7)-->
+      java-7
+    try-with resource
+    String in switch Statements
+     state management
+Java 1.8 All Features 
+
+  Functional Interface-> if an Interface can conatain only one abstract method and n number of default and static method then it is called Function Interface.
+   ex->Comparater,Runner,Supplier,Predicate,Consumer etc.
+
+2)  Lambda Expression--> is used to provide the implemention of functional Interface .it is used to reduces bunch of annonymouse class and less memory.
+
+3)  Default Method()->this method comes in java8 version by using this method we can add utility requirement for our implementation class if i want otherwise it will 
+     not force to override this method to implement in implemation class.
+ 
+    public interface greet{
+   
+    public void abstract eat();
+
+     default sleepAfternoon(){
+   }
+}
+
+4)  static Method-> we have to declear static method in java8 for access without object creation in java .by using interface name we can access static method in jhava.
+ 
+5)  Method Reference--> we can use to refer the method to the Lqmbda expression by using :: operator that is called Method Reference.
+
+6) Stream Api--> it is used to process the collection data.its provided multiple methods to use to process the bunch of collection Data.
+
+
+Ans8)---Model View And Controller--->
+  Model is nothing but Data is called Model.it is Used to read the Data From the View Component to The Controler That is Called Model.
+
+  View-> it Is Nithing But Present Layer Component We have to Send the Data From View Componet.
+    ex:_Index.html is View Compoment.
+
+  Controller-> Controller Is a Java Class We can Call it is A Web Component We can Send Process The Bushiness Logic In View Component and Return to The Dispatcher Servlet
+    ModelAnd View.
+
+Execution Flow of Spring MVC?
+
+1)--> End User Make A request.
+2)--> request  send to the Dispatcher Servlet Nothing But Front Controller.
+3)-->then Front Controller send Request to the Handler Mapper and Handler Mapper Identiyfy the Request and search Appropiate Controllerr and Appropiate Method.
+4)-->again Handler Mapper Send The Controller And Method Information to the Dispatcher servlet then Dispatcher Servlet go to The Apptropiate Controller and method.
+5)-->Controller Identify the request and send request to the appropiate Method to perform the Bushiness Logic and it will Perform Bushiness Logic and Return ModelAndView Component.
+6)-->then Controller return return MODELANDVIEW to again Dispatcher Servlet.but view component without Extension it will return.
+7)->then Dispatcher Servlet go threw to View Resolver and view Resolver search the prefix and suffix of view Component and it will return to the Dispatcher Servlet
+8)--> Dispatcher Servlet Then go to the View Component and Render the Data from Model Attiribte and it will send to The Again Dispatcher Servlet.
+9)-->Dispatcher servlet send Data to The Front Controller by using http://localhost:8080/user hyperlink.
+
+
+Ans9)--Qualifier In Spring
+      Some time we have two same type of Dependent classes then Ioc container will got Ambiguity Error  because this can not Identify the Dependent Class to
+         then we have to use Qualifier Annotation in Spring.
+     ex: @Qualifier ,@Primary.
+
+Ans10)-->IOC Container Is a Inversion Of Control is not not Provided by Sring Framework .it is Responsible for Manage Dependency Between Two Component and
+        manage the life cycle of Object Creation to Destruction in Spring Framework.
+
+       FileSystemResource
+        ClassPathResource
+
+Ans11)-->Spring is a powerful non-invassive lossely couple, lightweight framework we have to used for application development.you can say that the Spring framework is a well-defined
+          tool that supports several web applications using Java as a programming language.
+
+Ans12)-->No We Can not Use Jsp As A Controller because Jsp is a Server Side Component. we have to use for Present Layer Component.
+
+Ans13)-->Spring Standlone Application Scope is Singleton in Case Of Spring Standlone Projects.
+
+Ans14)->In Html5 Intoduces Some new Tags
+      <Aside>--> We have to use a piece of content that is only realted to the rest Of Page.
+     
+    <audio>  we have represent Audio file.
+    <datalist> We can use this tag to make combo box for input attribute
+    <meter>  manage a measurement such like as Diks usages.
+
+     <wbr> we can use for line break.
+     <Video> we Can create A Video File.
+
+Ans15) Jsp if You have Write Jsp tag then you must write code of all implementation and logic of those tag in java.
+       But In Jstl it is just a Laibrary Provided by Sun to apply such functionality in server page.
+Ans16)  css selector - <p>,id,class selecto(.center)
+
+Ans17) Fuction is used to calculate Bushiness Logic from given function.
+  procuder-> it is used to given collection of Command to set the order of execution.
+
+Ans18) tate management database mainly used in large scale applications for making the architecure and quality of code better.It is used as for optimizing better performance and storage device as well.
+It is an alternative to cache state data in memory for reducing the amount of runtime memory
+
+Ans19)->.ID and class selector used in CSS and the main difference is class selector defined as fullstop(.) and Id selector defined as hash(#).class is used to specify more than one element and Id specify one particular element only.  
+
+Ans20)- Trigger is a stored procedure in Database Which automatically invokes whenever a special event in the Databse occurs.
+
+
+
